@@ -1,3 +1,5 @@
+package unorganisedCode;
+
 import java.net.NetworkInterface;
 import java.net.SocketException;
 import java.util.Enumeration;
@@ -5,7 +7,7 @@ import java.util.Enumeration;
 public class q4 {
     public static void main(String[] args) {
         try{
-            Enumeration n = NetworkInterface.getNetworkInterfaces();
+            Enumeration<NetworkInterface> n = NetworkInterface.getNetworkInterfaces();
             while (n.hasMoreElements()) {
                 System.out.println(n.nextElement());
             }

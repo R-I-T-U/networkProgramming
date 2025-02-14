@@ -1,6 +1,8 @@
+package unorganisedCode;
+
 import java.io.IOException;
 import java.net.InetAddress;
-import java.net.*;
+
 public class q1 {
     public static void main(String[] args) {
         try{

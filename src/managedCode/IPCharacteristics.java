@@ -1,3 +1,5 @@
+package managedCode;
+
 import java.net.*;
 
 public class IPCharacteristics {

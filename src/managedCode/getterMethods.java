@@ -1,5 +1,6 @@
+package managedCode;
+
 import java.net.*;
-import java.util.Arrays;
 
 public class getterMethods {
     public static void main(String[] args) throws UnknownHostException {

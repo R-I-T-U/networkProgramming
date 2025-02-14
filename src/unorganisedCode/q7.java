@@ -1,6 +1,6 @@
+package unorganisedCode;
 
 import java.net.*;
-import java.util.*;
 import java.lang.*;
 public class q7
 {
