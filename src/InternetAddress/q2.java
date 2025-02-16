@@ -1,9 +1,10 @@
-package managedCode;
+package InternetAddress;
 
 import java.net.*;
 
-public class IPCharacteristics {
+public class q2 {
     public static void main(String[] args) throws UnknownHostException {
+        System.out.println("Name: Ritu , Roll: 36, Que no. 2");
             InetAddress ia = InetAddress.getByName("www.chess.com");
         System.out.println(ia);
 

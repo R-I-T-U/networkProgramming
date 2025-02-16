@@ -1,11 +1,12 @@
-package managedCode;
+package InternetAddress;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.Arrays;
 
-public class objectMethods {
+public class q3 {
     public static void main(String[] args) {
+        System.out.println("Name: Ritu , Roll: 36, Que no. 3");
         try{
             InetAddress ip1 = InetAddress.getByName("www.facebook.com");
             InetAddress ip2 = InetAddress.getByName("www.fb.com");

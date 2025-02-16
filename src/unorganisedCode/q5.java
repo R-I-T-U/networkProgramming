@@ -21,11 +21,6 @@ public class q5 {
         gettingAMACAddress();
         //creatingURIInstances();
         //UsingTheURLClass();
-        obtainingInformationAboutAnIPAddress();
-        testingReachability();
-        theInet4AddressClass();
-        testingForTheIPAddressType();
-        usingIPv4compatibleIPv6Addresses();
         isIPv4CompatibleAddressExample();
     }
 
@@ -109,153 +104,60 @@ public class q5 {
             e.printStackTrace();
         }
     }
-
-    private static void displayURI(URI uri) {
-        System.out.println("URI Information");
-        System.out.println("getAuthority: " + uri.getAuthority());
-        System.out.println("getScheme: " + uri.getScheme());
-        System.out.println("getSchemeSpecificPart: " + uri.getSchemeSpecificPart());
-        System.out.println("getHost: " + uri.getHost());
-        System.out.println("getPath: " + uri.getPath());
-        System.out.println("getQuery: " + uri.getQuery());
-        System.out.println("getFragment: " + uri.getFragment());
-        System.out.println("getUserInfo: " + uri.getUserInfo());
-        System.out.println("normalize: " + uri.normalize());
-    }
-
-    private static void creatingURIInstances() {
-        try {
-            // Creating URI instances
-            URI uri = new URI("https://www.packtpub.com/books/content/support");
-            uri = new URI("https://en.wikipedia.org/wiki/"
-                    + "URL_normalization#Normalization_process");
-            uri = new URI("https", "en.wikipedia.org", "/wiki/URL_normalization", "Normalization_process");
-            displayURI(uri);
-        } catch (URISyntaxException ex) {
-            ex.printStackTrace();
-        }
-    }
-
-    private static void displayURL(URL url) {
-        System.out.println("URL: " + url);
-        System.out.printf("  Protocol: %-32s  Host: %-32s\n", url.getProtocol(), url.getHost());
-        System.out.printf("      Port: %-32d  Path: %-32s\n", url.getPort(), url.getPath());
-        System.out.printf(" Reference: %-32s  File: %-32s\n", url.getRef(), url.getFile());
-        System.out.printf(" Authority: %-32s Query: %-32s\n", url.getAuthority(), url.getQuery());
-        System.out.println(" User Info: " + url.getUserInfo());
-    }
-
-    private static void UsingTheURLClass() {
-        try {
-            URL url;
-            url = new URL("https://www.packtpub.com/books/content/support");
-            url = new URL("http://www.packpub.com");
-//            The following Generates: java.net.MalformedURLException: no protocol: www.packpub.com
-//            url = new URL("www.packpub.com");
-            url = new URL("http://pluto.jhuapl.edu/");
-            url = new URL("http", "pluto.jhuapl.edu", 80, "News-Center/index.php");
-            url = new URL("https://en.wikipedia.org/wiki/Uniform_resource_locator#Syntax");
-            url = new URL("https://www.google.com/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=url+syntax");
-            System.out.println();
-            displayURL(url);
-            System.out.println("getContent: " + url.getContent());
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-    }
-
-    private static void displayInetAddressInformation(InetAddress address) {
-        System.out.println("---InetAddress Information---");
-        System.out.println(address);
-        System.out.println("CanonicalHostName: " + address.getCanonicalHostName());
-        System.out.println("HostName: " + address.getHostName());
-        System.out.println("HostAddress: " + address.getHostAddress());
-        System.out.println("---------");
-    }
-
-    private static void obtainingInformationAboutAnIPAddress() {
-        try {
-            InetAddress address = InetAddress.getByName("www.packtpub.com");
-            displayInetAddressInformation(address);
-        } catch (UnknownHostException ex) {
-            ex.printStackTrace();
-        }
-    }
-
-    private static void testingReachability() {
-        try {
-            String URLAddress = "www.packtpub.com";
-            InetAddress[] addresses = InetAddress.getAllByName(URLAddress);
-            for (InetAddress inetAddress : addresses) {
-                try {
-                    if (inetAddress.isReachable(10000)) {
-                        System.out.println(inetAddress + " is reachable");
-                    } else {
-                        System.out.println(inetAddress + " is not reachable");
-                    }
-//                    Process p1 = java.lang.Runtime.getRuntime().exec("ping -n 1 " + URLAddress);
-//                    int returnVal = p1.waitFor();
-//                    System.out.println(returnVal);
-                } catch (IOException ex) {
-                    ex.printStackTrace();
-//                } catch (InterruptedException ex) {
-//                    ex.printStackTrace();
-                }
-
-            }
-        } catch (UnknownHostException ex) {
-            ex.printStackTrace();
-        }
-    }
-
-    private static void theInet4AddressClass() {
-        try {
-            Inet4Address address;
-            address = (Inet4Address) InetAddress.getByName("www.google.com");
-            address = (Inet4Address) Inet4Address.getByName("www.google.com");
-
-            // Special IPv4 Addresses
-            address = (Inet4Address) Inet4Address.getByName("0.0.0.0");
-            System.out.println(address.isAnyLocalAddress());
-            address = (Inet4Address) Inet4Address.getByName("127.0.0.1");
-            System.out.println(address.isLoopbackAddress());
-        } catch (UnknownHostException ex) {
-            ex.printStackTrace();
-        }
-    }
-
-    private static void testingForTheIPAddressType() {
-        try {
-            InetAddress address = InetAddress.getByName("www.packtpub.com");
-
-            byte buffer[] = address.getAddress();
-            if (buffer.length <= 4) {
-                System.out.println("IPv4 Address");
-            } else {
-                System.out.println("IPv6 Address");
-            }
-
-            if (address instanceof Inet4Address) {
-                System.out.println("IPv4 Address");
-            } else {
-                System.out.println("IPv6 Address");
-            }
-        } catch (UnknownHostException ex) {
-            ex.printStackTrace();
-        }
-    }
-
-    private static void usingIPv4compatibleIPv6Addresses() {
-        try {
-            InetAddress address = InetAddress.getByName("www.packtpub.com");
-            address = InetAddress.getByName("74.125.21.105");
-            address = InetAddress.getByName("::ffff:74.125.21.105");
-            address = InetAddress.getByName("::ffff:4a7d:1569");
-            displayInetAddressInformation(address);
-        }catch (UnknownHostException ex) {
-            ex.printStackTrace();
-        }
-    }
+//
+//    private static void displayURI(URI uri) {
+//        System.out.println("URI Information");
+//        System.out.println("getAuthority: " + uri.getAuthority());
+//        System.out.println("getScheme: " + uri.getScheme());
+//        System.out.println("getSchemeSpecificPart: " + uri.getSchemeSpecificPart());
+//        System.out.println("getHost: " + uri.getHost());
+//        System.out.println("getPath: " + uri.getPath());
+//        System.out.println("getQuery: " + uri.getQuery());
+//        System.out.println("getFragment: " + uri.getFragment());
+//        System.out.println("getUserInfo: " + uri.getUserInfo());
+//        System.out.println("normalize: " + uri.normalize());
+//    }
+//
+//    private static void creatingURIInstances() {
+//        try {
+//            // Creating URI instances
+//            URI uri = new URI("https://www.packtpub.com/books/content/support");
+//            uri = new URI("https://en.wikipedia.org/wiki/"
+//                    + "URL_normalization#Normalization_process");
+//            uri = new URI("https", "en.wikipedia.org", "/wiki/URL_normalization", "Normalization_process");
+//            displayURI(uri);
+//        } catch (URISyntaxException ex) {
+//            ex.printStackTrace();
+//        }
+//    }
+//
+//    private static void displayURL(URL url) {
+//        System.out.println("URL: " + url);
+//        System.out.printf("  Protocol: %-32s  Host: %-32s\n", url.getProtocol(), url.getHost());
+//        System.out.printf("      Port: %-32d  Path: %-32s\n", url.getPort(), url.getPath());
+//        System.out.printf(" Reference: %-32s  File: %-32s\n", url.getRef(), url.getFile());
+//        System.out.printf(" Authority: %-32s Query: %-32s\n", url.getAuthority(), url.getQuery());
+//        System.out.println(" User Info: " + url.getUserInfo());
+//    }
+//
+//    private static void UsingTheURLClass() {
+//        try {
+//            URL url;
+//            url = new URL("https://www.packtpub.com/books/content/support");
+//            url = new URL("http://www.packpub.com");
+////            The following Generates: java.net.MalformedURLException: no protocol: www.packpub.com
+////            url = new URL("www.packpub.com");
+//            url = new URL("http://pluto.jhuapl.edu/");
+//            url = new URL("http", "pluto.jhuapl.edu", 80, "News-Center/index.php");
+//            url = new URL("https://en.wikipedia.org/wiki/Uniform_resource_locator#Syntax");
+//            url = new URL("https://www.google.com/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=url+syntax");
+//            System.out.println();
+//            displayURL(url);
+//            System.out.println("getContent: " + url.getContent());
+//        } catch (IOException ex) {
+//            ex.printStackTrace();
+//        }
+//    }
 
     private static void isIPv4CompatibleAddressExample() {
         try {

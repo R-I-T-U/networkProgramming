@@ -1,9 +1,10 @@
-package managedCode;
+package InternetAddress;
 
 import java.net.*;
 
-public class getterMethods {
+public class q1 {
     public static void main(String[] args) throws UnknownHostException {
+        System.out.println("Name: Ritu , Roll: 36, Que no. 1");
         InetAddress me = InetAddress.getLocalHost();
         System.out.println("My address is "+me.getHostAddress());
         System.out.println("and hostname is "+me.getHostName());
