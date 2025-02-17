@@ -6,6 +6,8 @@ import java.io.IOException;
 public class q7 {
     public static void main(String[] args) {
         try {
+            System.out.println("Name: Ritu , Roll: 36, Que no. 7");
+
             InetAddress inet = InetAddress.getByName("www.google.com");
             boolean reachable = inet.isReachable(5000);
             if (reachable) {

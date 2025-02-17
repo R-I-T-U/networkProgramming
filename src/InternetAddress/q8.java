@@ -7,6 +7,8 @@ import java.util.Scanner;
 public class q8 {
 
     public static void main(String[] args) {
+        System.out.println("Name: Ritu , Roll: 36, Que no. 8");
+
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter an IP address: ");
         String ipAddress = scanner.nextLine().trim();

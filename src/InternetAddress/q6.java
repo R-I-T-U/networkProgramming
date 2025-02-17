@@ -10,6 +10,8 @@ import java.util.Enumeration;
 public class q6 {
     public static void main(String[] args) {
         try{
+            System.out.println("Name: Ritu , Roll: 36, Que no. 6");
+
             NetworkInterface ni = NetworkInterface.getByName("eth0");
             if(ni==null){
                 System.out.println("No such interface.");
