@@ -2,6 +2,7 @@ package InternetAddress;
 
 import java.net.*;
 import java.io.IOException;
+// Program to demonstrate testing reachability.
 
 public class q7 {
     public static void main(String[] args) {

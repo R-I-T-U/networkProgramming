@@ -3,6 +3,7 @@ package InternetAddress;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.Scanner;
+// Program to implement spamcheck and demonstrate the faults.
 
 public class q9 {
     public static final String BLACKHOLE = "zen.spamhaus.org"; // Use a real DNSBL

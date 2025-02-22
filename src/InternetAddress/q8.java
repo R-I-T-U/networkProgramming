@@ -3,6 +3,7 @@ package InternetAddress;
 import java.net.*;
 import java.net.UnknownHostException;
 import java.util.Scanner;
+//Program to test the nature of an address entered from the command line.
 
 public class q8 {
 

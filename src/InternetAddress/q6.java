@@ -6,6 +6,7 @@ import java.net.SocketException;
 import java.net.UnknownHostException;
 import java.sql.SQLOutput;
 import java.util.Enumeration;
+//Program to demonstrate The Network Interface class with factory.
 
 public class q6 {
     public static void main(String[] args) {
