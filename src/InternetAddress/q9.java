@@ -10,6 +10,7 @@ public class q9 {
 
     //    ip1= 192.168.1.1, ip2 = 195.128.126.165
     public static void main(String[] args) {
+        System.out.println("Name: Ritu , Roll: 36, Que no. 9");
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter IP Address: ");
         String ip = sc.nextLine();
