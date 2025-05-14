@@ -1,9 +1,12 @@
-package InternetAddress;
+package URL;
 import java.net.*;
 import java.util.Scanner;
+// Program for determining which protocols a virtual machine supports.
 
 public class q10 {
     public static void main(String[] args) {
+        System.out.println("Name: Ritu , Roll: 36, Que no. 10");
+
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter VM: ");
         String str = sc.nextLine();

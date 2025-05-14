@@ -1,6 +1,4 @@
-package unorganisedCode;
-
-import RMI.ImplExample;
+package RMI;
 
 import java.rmi.AlreadyBoundException;
 import java.rmi.registry.Registry;

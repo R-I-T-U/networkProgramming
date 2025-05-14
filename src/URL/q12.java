@@ -1,15 +1,16 @@
-package InternetAddress;
+package URL;
 
 import java.net.URL;
+// Program to determine parts of a URLs.
 
 public class q12 {
 
     public static void main(String args[]) throws Exception {
+        System.out.println("Name: Ritu , Roll: 36, Que no. 12");
 
-        URL u = new URL("http://www.java2s.com:80/index.html?id=5#top");
+        URL u = new URL("http://www.ritu.com:80/index.html?id=5#top");
         System.out.println("The URL is " + u);
         System.out.println("The scheme/Protocal is " + u.getProtocol());
-        System.out.println("The user info is " + u.getUserInfo());
 
         String host = u.getHost();
         if (host != null) {

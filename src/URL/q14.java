@@ -1,25 +1,26 @@
-package InternetAddress;
+package URL;
 
 import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLDecoder;
 import java.net.URLEncoder;
+// Program to implement x-www-form-urlencoded strings.
 
 public class q14 {
     public static void main(String[] args) throws MalformedURLException, UnsupportedEncodingException {
-        // base URL
-        String baseurl = "https://www.javaguides.net/search?q=";
+        // Original data
+        System.out.println("Name: Ritu , Roll: 36, Que no. 14");
 
-        // String to be encoded
-        String query = "core+java+tutorial";
+        String data = "http://www.baidu.com";
 
-        System.out.println("URL without encoding :");
-        URL url = new URL(baseurl + query);
-        System.out.println(url);
+        // Encoding the data
+        String encodedData = URLEncoder.encode(data, "UTF-8");
+        System.out.println("Encoded url: " + encodedData);
 
-        // encode() method
-        System.out.println("URL after encoding :");
-        url = new URL(baseurl + URLEncoder.encode(query, "UTF-8"));
-        System.out.println(url);
+        // Decoding the data
+        String decodedData = URLDecoder.decode(encodedData, "UTF-8");
+        System.out.println("Decoded url: " + decodedData);
+
     }
 }

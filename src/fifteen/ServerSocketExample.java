@@ -1,4 +1,4 @@
-package unorganisedCode;
+package fifteen;
 
 import java.io.*;
 import java.net.*;
@@ -7,26 +7,26 @@ public class ServerSocketExample {
     public static void main(String[] args) {
         try {
             // Create a server socket
-            ServerSocket serverSocket = new ServerSocket(12345); // Replace with your port
+            ServerSocket ss = new ServerSocket(12345); // Replace with your port
 
             // Listen for connections
             System.out.println("Server is listening...");
-            Socket clientSocket = serverSocket.accept();
+            Socket s = ss.accept();
 
             // Receive data
-            InputStream is = clientSocket.getInputStream();
+            InputStream is = s.getInputStream();
             BufferedReader in = new BufferedReader(new InputStreamReader(is));
             String request = in.readLine();
             System.out.println("Client says: " + request);
 
             // Send data
-            OutputStream os = clientSocket.getOutputStream();
+            OutputStream os = s.getOutputStream();
             PrintWriter out = new PrintWriter(os, true);
             out.println("Hello, Client!");
 
             // Close the connection
-            clientSocket.close();
-            serverSocket.close();
+            s.close();
+            ss.close();
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -1,4 +1,4 @@
-package unorganisedCode;
+package RMI;
 
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
