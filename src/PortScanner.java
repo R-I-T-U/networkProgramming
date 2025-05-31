@@ -1,10 +1,9 @@
 import java.io.IOException;
 import java.net.Socket;
-import java.net.UnknownHostException;
 
 public class PortScanner {
     public static void main(String[] args) {
-        String host = "localhost"; // You can change this to any IP or domain
+        String host = "localhost";
         int startPort = 1;
         int endPort = 1024;
 
@@ -14,7 +13,7 @@ public class PortScanner {
             try (Socket socket = new Socket(host, port)) {
                 System.out.println("Port " + port + " is open.");
             } catch (IOException ex) {
-                // Port is closed or not reachable, do nothing
+                ex.printStackTrace();
             }
         }
     }

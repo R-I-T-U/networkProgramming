@@ -1,7 +1,7 @@
 import java.net.*;
 import java.nio.channels.*;
 
-public class ShortChannelOptions {
+public class ChannelOptions {
     public static void main(String[] args) throws Exception {
         System.out.println("SocketChannel: " + SocketChannel.open().socket().getReceiveBufferSize());
         System.out.println("ServerSocketChannel: " + ServerSocketChannel.open().socket().getReuseAddress());

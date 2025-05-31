@@ -5,15 +5,14 @@ import java.net.*;
 
 public class DayTimeClient {
     public static void main(String[] args) {
-        String serverAddress = "localhost"; // Server address
-        int port = 5000; // Port number
+        String addr = "localhost";
+        int port = 5000;
 
-        try (Socket socket = new Socket(serverAddress, port);
-             BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()))) {
+        try (Socket s = new Socket(addr, port);
+             BufferedReader in = new BufferedReader(new InputStreamReader(s.getInputStream()))) {
 
-            // Read and display the date and time from the server
-            String response = in.readLine();
-            System.out.println("Server Response: " + response);
+            String res = in.readLine();
+            System.out.println("Server Response: " + res);
 
         } catch (IOException e) {
             e.printStackTrace();

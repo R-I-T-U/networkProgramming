@@ -21,6 +21,7 @@ Messages are sent in DatagramPackets over UDP, which ensures low-latency broadca
 import java.net.DatagramPacket;
 import java.net.InetAddress;
 import java.net.MulticastSocket;
+import java.net.NetworkInterface;
 
 public class MulticastClientF {
     public static void main(String[] args) {
@@ -29,6 +30,9 @@ public class MulticastClientF {
 
         try (MulticastSocket socket = new MulticastSocket(port)) {
             InetAddress group = InetAddress.getByName(multicastAddress);
+
+            NetworkInterface networkInterface = NetworkInterface.getByName("wlan0"); // or "eth0" depending on your system
+
             socket.joinGroup(group);
 
             System.out.println("Multicast Client Started... Listening for messages...");
@@ -49,6 +53,4 @@ public class MulticastClientF {
             socket.leaveGroup(group);
         } catch (Exception e) {
             e.printStackTrace();
-        }
-    }
-}
+        }}}

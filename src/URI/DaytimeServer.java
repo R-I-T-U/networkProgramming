@@ -6,20 +6,18 @@ import java.util.Date;
 
 public class DaytimeServer {
     public static void main(String[] args) {
-        int port = 5000; // Port number for the server
-        try (ServerSocket serverSocket = new ServerSocket(port)) {
-            System.out.println("Daytime Server started. Waiting for clients...");
+        int port = 5000;
+        try (ServerSocket s = new ServerSocket(port)) {
+            System.out.println("Server started. Waiting clients...");
 
             while (true) {
-                Socket clientSocket = serverSocket.accept();
-                System.out.println("Client connected: " + clientSocket.getInetAddress());
+                Socket cs = s.accept();
+                System.out.println("Client connected: " + cs.getInetAddress());
 
-                // Send current date and time to the client
-                PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
+                PrintWriter out = new PrintWriter(cs.getOutputStream(), true);
                 out.println("Current Date and Time: " + new Date());
 
-                // Close the client socket
-                clientSocket.close();
+                cs.close();
             }
         } catch (IOException e) {
             e.printStackTrace();
